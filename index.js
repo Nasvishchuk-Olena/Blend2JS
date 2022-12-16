@@ -30,11 +30,11 @@
 
 
 // String to HH:MM
-const promptString = prompt('Give number of minutes:');
-const hours = String(Math.floor((promptString / 60))).padStart(2, 0);
-const minutes = String(promptString % 60).padStart(2, 0);
+// const promptString = prompt('Give number of minutes:');
+// const hours = String(Math.floor((promptString / 60))).padStart(2, 0);
+// const minutes = String(promptString % 60).padStart(2, 0);
 
-console.log(`${hours}:${minutes}`);
+// console.log(`${hours}:${minutes}`);
 
 //3. Напишите цикл, который выводит в консоль
 //числа от max до min по убыванию
@@ -53,3 +53,40 @@ console.log(`${hours}:${minutes}`);
 // }
 // console.log(total)
 
+//4. Напишіть код, який буде запитувати "Hello, please enter your login!"
+//логін за допомогою prompt і логувати результат у консоль браузера
+
+//Якщо нажали клавішу Esc, то вивести у консоль рядок "Authorization has been canceled"
+//Якщо користувач вводить щось відмінне від "admin", то вивести рядок "Goodbye!"
+//Якщо користувач вводить "admin", то prompt запитує пароль (Please enter your password).
+
+//Пароль перевіряти так:
+//Якщо нажали клавішу Esc, то вивести у консоль рядок "Authorization has been canceled"
+//Якщо користувач вводить щось відмінне від "adminPassword", то вивести рядок "Goodbye!"
+//Якщо користувач вводить "adminPassword", то вивести у консоль рядок "Hello!"
+
+// const login = prompt("Hello, please enter your login!");
+// console.log(login);
+// switch (login) {
+//     case null:
+//         console.log("Authorization has been canceled")
+//         break;
+//     case 'admin':
+//         const password = prompt('Please enter your password')
+//         switch (password) {
+//             case null:
+//                 console.log("Authorization has been canceled")
+//                 break;
+//             case 'adminPassword':
+//                 console.log("Hello!")
+//                 break;
+        
+//             default: console.log("Goodbye!")
+//                 break;
+//         }
+        
+//         break;
+
+//     default: console.log("Goodbye!")
+//         break;
+// }
