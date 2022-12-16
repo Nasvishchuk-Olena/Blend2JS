@@ -28,11 +28,28 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 
 
-/* 
+
 // String to HH:MM
 const promptString = prompt('Give number of minutes:');
 const hours = String(Math.floor((promptString / 60))).padStart(2, 0);
 const minutes = String(promptString % 60).padStart(2, 0);
 
 console.log(`${hours}:${minutes}`);
- */
+
+//3. Напишите цикл, который выводит в консоль
+//числа от max до min по убыванию
+// Выведите в консоль всех четных чисел от min до max
+
+
+// const max = 55;
+// const min = 10;
+// let total = 0;
+
+// for(let i = max; i >= min; i -= 1) {
+//     if (i % 2 === 0) {
+//     console.log(i); 
+//     total += i;
+//     }
+// }
+// console.log(total)
+
