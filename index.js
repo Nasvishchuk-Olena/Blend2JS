@@ -128,72 +128,54 @@
 
 // letMeSeeYourName(greet);
 
+// 6. Напишіть функцію each(array, callback), яка
+//першим параметром приймає масив, а другим - функцію,
+//яка застосується до кожного елемента масива.
+//Функція each має повернути новий масив, елементами
+//якого будуть результати виклику callback.
+//callback функція має множити елементи на 2
 
-// 2. Напишіть дві функції
-//makeProduct(name, price, callback) - приймає
-//ім'я та ціну товару, а також callback.
-//Функція створює об'єкт товару, додаючи йому унікальний
-//ідентіфікатор у властивість id та викликає callback
-//передаючи йому створений об'єкт.
-//showProduct(product) - коллбек, що приймає об'єкт
-//продукта і логірує його в консоль
-
-
-// function makeProduct(name, price, callback) {
-//     const product = {
-//         name,
-//         price,
-//         id: Date.now()
-//     }
-
-
-//     callback(product);
-// }
-
-// function showProduct(product){
-//     console.log(product);
-// }
-
-// makeProduct('banana', 100, showProduct);
-
-// 3. Напишіть функцію makeShef(shefName), яка повертає функцію
-//makeDish(dish), яка памятає ім'я шефа під час її виклику
-//Функція makeDish має логіровать "<shef> is cooking <dish>"
-
-
-// function makeShef(shefName) {
-//   return function makeDish(dish) {
-//     console.log (`${shefName} is cooking ${dish}`)
-//   }
-// }
-// const olena  = makeShef("Olena")
-// olena("pelmeni")
-
-// const oleksandr = makeShef("Oleksandr")
-// oleksandr("soljanka")
-
-
-// 4. Виправте помилки, щоб код працював
-// const product = {
-//   price: 5000,
-//   showPrice() {
-//     console.log(this.price)
-//   },
+// function each(array, callback) {
+// return array.map(x => callback(x))
 // };
-// product.showPrice();
 
+// function multiply(x) {
+//    return x*2
+// };
 
-// 5. Виправте код, щоб він працював
-// function callAction(callback) {
-//     callback()
+// console.log(each([2, 4, 6], multiply));
+
+// 7. Напишите функцию makeCounter, которая возвращает другую
+//функцию, которая считает и логирует количество своих вызовов
+
+// 8. Напишите функцию savePassword(password) которая принимает
+//пароль и возвращает внутреннюю функцию, которая принимает
+//строку и возвращает буль true, если строка совпадает с сохраненным
+//паролем и false - если не совпадает
+
+// 9. Напишите функцию для хранения скидки.Функция возвращает
+//другую функцию, которая принимает сумму покупки
+//и возвращает финальную сумму с сохраненной скидкой.
+
+// 10. Напиши функцию конструктор User для создания пользователя со следующими свойствами
+//a. userName - имя, строка
+//b. age - возраст, число
+//c. numbersOfPost - количество постов, число
+//d. класс ожидает 1 параметр - объект настроек с одноименными свойствами
+//Добавь метод getInfo(), который возвращает строку:
+//`Пользователю ${} ${} лет и у него ${} публикаций.`
+// User.prototype.getInfo = function () {
+//     console.log(
+//         `Пользователю ${this.username} ${this.age} лет и у него ${this.numbersOfPost} публикаций.`
+//     )
 // }
 
-// const item = {
-//     getQuantity() {
-//         console.log(this.quantity);
-//     },
-//     quantity: 5,
-// }
 
-
-// callAction(item.getQuantity.bind(item));
+// 11. Напиши функцию конструктор Storage который создаёт объекты
+//для управления складом товаров.
+//При вызове будет получать один агрумент - начальный массив товаров,
+//и записывать его в свойство items.
+//Добавь методы класса:
+//getItems() - возвращайте массив товаров
+//addItems(item) - получает новый товар и добавляет его к текущим
+//removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
