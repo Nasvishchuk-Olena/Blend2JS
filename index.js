@@ -161,8 +161,8 @@
 //Функція makeDish має логіровать "<shef> is cooking <dish>"
 
 
-// function makeShef(shefName) { 
-//   return function makeDish(dish) { 
+// function makeShef(shefName) {
+//   return function makeDish(dish) {
 //     console.log (`${shefName} is cooking ${dish}`)
 //   }
 // }
@@ -171,3 +171,29 @@
 
 // const oleksandr = makeShef("Oleksandr")
 // oleksandr("soljanka")
+
+
+// 4. Виправте помилки, щоб код працював
+// const product = {
+//   price: 5000,
+//   showPrice() {
+//     console.log(this.price)
+//   },
+// };
+// product.showPrice();
+
+
+// 5. Виправте код, щоб він працював
+// function callAction(callback) {
+//     callback()
+// }
+
+// const item = {
+//     getQuantity() {
+//         console.log(this.quantity);
+//     },
+//     quantity: 5,
+// }
+
+
+// callAction(item.getQuantity.bind(item));
