@@ -139,19 +139,35 @@
 //продукта і логірує його в консоль
 
 
-function makeProduct(name, price, callback) {
-    const product = {
-        name,
-        price,
-        id: Date.now()
-    }
+// function makeProduct(name, price, callback) {
+//     const product = {
+//         name,
+//         price,
+//         id: Date.now()
+//     }
 
 
-    callback(product);
-}
+//     callback(product);
+// }
 
-function showProduct(product){
-    console.log(product);
-}
+// function showProduct(product){
+//     console.log(product);
+// }
 
-makeProduct('banana', 100, showProduct);
+// makeProduct('banana', 100, showProduct);
+
+// 3. Напишіть функцію makeShef(shefName), яка повертає функцію
+//makeDish(dish), яка памятає ім'я шефа під час її виклику
+//Функція makeDish має логіровать "<shef> is cooking <dish>"
+
+
+// function makeShef(shefName) { 
+//   return function makeDish(dish) { 
+//     console.log (`${shefName} is cooking ${dish}`)
+//   }
+// }
+// const olena  = makeShef("Olena")
+// olena("pelmeni")
+
+// const oleksandr = makeShef("Oleksandr")
+// oleksandr("soljanka")
