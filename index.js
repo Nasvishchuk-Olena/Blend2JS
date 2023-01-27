@@ -105,3 +105,25 @@
 //   }
 // } while (check);
 // console.log(`The total sum of the entered numbers is ${total}`);
+
+
+//Напишіть дві функції
+// letMeSeeYourName(callback) - запитує ім'я користувача
+//через prompt і викликає callback функцію
+//greet(name) - це коллбек, яка приймає ім'я і логує в консолі рядок "Hi, <name>"
+//Реалізуй перевірку, що prompt не пустий
+
+// function letMeSeeYourName(callback) {
+// const name = prompt("What is your name?");
+// callback(name);
+// }
+
+// function greet(name) {
+//     if(!name) {
+        
+//         return
+//     }
+//     console.log(`Hi, ${name}`);
+// }
+
+// letMeSeeYourName(greet);
