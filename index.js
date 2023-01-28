@@ -148,14 +148,63 @@
 // 7. Напишите функцию makeCounter, которая возвращает другую
 //функцию, которая считает и логирует количество своих вызовов
 
+
+
+
+// function logger() {
+//     let numberOfCalls = 0;
+//     return function callLoger() {
+//         numberOfCalls += 1;
+//         console.log(numberOfCalls);
+//     }
+// }
+
+// const caller = logger();
+// caller();
+// caller();
+// caller();
+// caller();
+
+
+
 // 8. Напишите функцию savePassword(password) которая принимает
 //пароль и возвращает внутреннюю функцию, которая принимает
 //строку и возвращает буль true, если строка совпадает с сохраненным
 //паролем и false - если не совпадает
 
+
+
+// function savePassword(password) {
+//     return function passChecker(string) {
+//         console.log(password === string);
+//     }
+// }
+
+// const pass = savePassword(123123123);
+
+// pass(123123123123);
+
+
+
 // 9. Напишите функцию для хранения скидки.Функция возвращает
 //другую функцию, которая принимает сумму покупки
 //и возвращает финальную сумму с сохраненной скидкой.
+
+
+
+
+// function saveDiscount(discount) {
+//     return function total(summ) {
+//         console.log(summ - summ * discount);
+//     }
+// }
+
+// const price = saveDiscount(0.1);
+// price(100);
+
+
+
+
 
 // 10. Напиши функцию конструктор User для создания пользователя со следующими свойствами
 //a. userName - имя, строка
