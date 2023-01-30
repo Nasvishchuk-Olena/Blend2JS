@@ -228,3 +228,53 @@
 //getItems() - возвращайте массив товаров
 //addItems(item) - получает новый товар и добавляет его к текущим
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
+
+
+
+const people = [
+  {name: "Ivan", id: 1, parentId: null}, 
+  {name: "Sergio", id: 4, parentId: null},  
+  {name: "Helen", id: 2, parentId: 1},
+  {name: "Danya", id: 8, parentId: 4},
+  {name: "Pavel", id: 3, parentId: 2},
+  {name: "Olya", id: 5, parentId: 2},
+  {name: "Nana", id: 6, parentId: 5},
+  {name: "Ira", id: 7, parentId: 6},
+  {name: "Alex", id: 9, parentId: 1},
+];
+
+
+
+function findChildrens(family) {
+    const familyTree = [];
+
+    for (const member of family) {
+        member.childrens = []
+    }
+
+    function familySearch(ancestor) {
+        family.map(person =>{
+            console.log(`Ищем потомков ${ancestor.name}`);
+            if (person.parentId === ancestor.id) {
+                console.log(`Потомок пользователя ${ancestor.name} найден. Это ${person.name}`);
+                ancestor.childrens.push(person);
+                console.log(`Потомок ${person.name} пользователя ${ancestor.name} добавлен в список `);
+                familySearch(person);
+            }
+        });
+        return ancestor;
+    };
+
+    for (const member of family) {
+        if (member.parentId === null) {
+            console.log(`Проверяем ${member.name}`);
+            familyTree.push(familySearch(member));
+        }
+    }
+    return console.log(familyTree);
+
+}
+
+
+findChildrens(people);
+
