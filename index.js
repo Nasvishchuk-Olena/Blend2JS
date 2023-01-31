@@ -219,6 +219,34 @@
 //     )
 // }
 
+// class User {
+
+//     constructor({userName, age, numbersOfPost}) {
+//         this.userName = userName;
+//         this.age = age;
+//         this.numbersOfPost = numbersOfPost;
+//     }
+
+//     getInfo() {
+//         console.log(`Пользователю ${this.userName} ${this.age} лет и у него ${this.numbersOfPost} публикаций.`);
+//     }
+    
+// }
+
+// // User.prototype.getInfo = function () {
+// //     console.log(
+// //         `Пользователю ${this.userName} ${this.age} лет и у него ${this.numbersOfPost} публикаций.`
+// //     )
+// // }
+
+// const alex = new User({
+//     userName: 'Alex',
+//     age: 25,
+//     numbersOfPost: 100,
+// })
+
+// alex.getInfo();
+
 
 // 11. Напиши функцию конструктор Storage который создаёт объекты
 //для управления складом товаров.
@@ -232,56 +260,92 @@
 
 // Family tree =========================>>>>
 
-const people = [
-  {name: "Ivan", id: 1, parentId: null}, 
-  {name: "Sergio", id: 4, parentId: null},  
-  {name: "Helen", id: 2, parentId: 1},
-  {name: "Danya", id: 8, parentId: 4},
-  {name: "Pavel", id: 3, parentId: 2},
-  {name: "Olya", id: 5, parentId: 2},
-  {name: "Nana", id: 6, parentId: 5},
-  {name: "Ira", id: 7, parentId: 6},
-  {name: "Alex", id: 9, parentId: 1},
-];
+// const people = [
+//   {name: "Ivan", id: 1, parentId: null}, 
+//   {name: "Sergio", id: 4, parentId: null},  
+//   {name: "Helen", id: 2, parentId: 1},
+//   {name: "Danya", id: 8, parentId: 4},
+//   {name: "Pavel", id: 3, parentId: 2},
+//   {name: "Olya", id: 5, parentId: 2},
+//   {name: "Nana", id: 6, parentId: 5},
+//   {name: "Ira", id: 7, parentId: 6},
+//   {name: "Alex", id: 9, parentId: 1},
+// ];
+
+// v. 1 ****************************************
+// function findChildrens(family) {
+//     const familyTree = [];
+
+//     for (const member of family) {
+//         member.childrens = null;
+//     }
+
+//     for (const member of family) {
+//         if (member.parentId === null) {
+//             console.log(`Ищем потомков пользователя ${member.name}`);
+//             familyTree.push(familySearch(member));
+//         }
+//     }    
+
+//     function familySearch(ancestor) {
+//         family.map(person =>{
+//             //console.log(`Проверяем пользователя ${ancestor.name}`);
+//             if (ancestor.id === person.parentId) {
+//                 console.log(`Совпадение найдено! ${person.name} является потомком пользователя ${ancestor.name}.`);
+//                 if (!ancestor.childrens) {
+//                     ancestor.childrens = [];
+//                     ancestor.childrens.push(person);
+//                     console.log(`${person.name} добавлен(а) в список потомков пользователя ${ancestor.name}.`);
+//                     familySearch(person);
+//                 } else {
+//                     ancestor.childrens.push(person);
+//                     console.log(`${person.name} добавлен(а) в список потомков пользователя ${ancestor.name}.`);
+//                     familySearch(person);
+//                 }
+//             }
+//         });
+//         return ancestor;
+//     };
+
+//     return console.log("Поиск завершен! Вот ваше семейное дерево:", familyTree);
+// }
+
+// findChildrens(people);
+// v. 1 ****************************************
+
+// v. 2 ***********
+// const childrenList = people.map(item => {
+//     item.children = people.filter(obj => obj.parentId === item.id);
+//     return item;
+// }).filter(({parentId})=> !parentId);
+//console.log(childrenList);
+// v. 2 ***********
 
 
-function findChildrens(family) {
-    const familyTree = [];
-
-    for (const member of family) {
-        member.childrens = null;
-    }
-
-    for (const member of family) {
-        if (member.parentId === null) {
-            console.log(`Проверяем ${member.name}`);
-            familyTree.push(familySearch(member));
-        }
-    }    
-
-    function familySearch(ancestor) {
-        family.map(person =>{
-            console.log(`Ищем потомков ${ancestor.name}`);
-            if (ancestor.id === person.parentId) {
-                console.log(`Потомок пользователя ${ancestor.name} найден. Это ${person.name}`);
-                if (!ancestor.childrens) {
-                    ancestor.childrens = [];
-                    ancestor.childrens.push(person);
-                    console.log(`Потомок ${person.name} пользователя ${ancestor.name} добавлен в список `);
-                    familySearch(person);
-                } else {
-                    ancestor.childrens.push(person);
-                    console.log(`Потомок ${person.name} пользователя ${ancestor.name} добавлен в список `);
-                    familySearch(person);
-                }
-            }
-        });
-        return ancestor;
-    };
-
-    return console.log(familyTree);
-}
-
-findChildrens(people);
+// v. 3 ***********
+// function main () {
+//   const result=[];
+//   people.forEach(person => {
+//     if ( !person.parentId) {
+//       result.push({...person, children: []});
+//     }  
+//     else {
+//       person.children = findParentInArray(result, person.parentId, person.name, person); 
+//     }
+//   });
+//   console.log("result=", result);
+// }
+// function findParentInArray(arrayOfParents, parentId, name, person) {
+//   arrayOfParents.forEach (mayBeFather => {
+//     if (mayBeFather.id === parentId) {
+//       mayBeFather.children.push({...person, children: []});
+//       return ;
+//     }
+//     else
+//       findParentInArray(mayBeFather.children, parentId, name, person); 
+//   });
+// }
+// main();
+// v. 3 ***********
 
 // Family tree <<<<=========================
