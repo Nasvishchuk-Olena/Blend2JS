@@ -230,6 +230,7 @@
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
 
 
+// Family tree =========================>>>>
 
 const people = [
   {name: "Ivan", id: 1, parentId: null}, 
@@ -244,37 +245,43 @@ const people = [
 ];
 
 
-
 function findChildrens(family) {
     const familyTree = [];
 
     for (const member of family) {
-        member.childrens = []
+        member.childrens = null;
     }
-
-    function familySearch(ancestor) {
-        family.map(person =>{
-            console.log(`Ищем потомков ${ancestor.name}`);
-            if (person.parentId === ancestor.id) {
-                console.log(`Потомок пользователя ${ancestor.name} найден. Это ${person.name}`);
-                ancestor.childrens.push(person);
-                console.log(`Потомок ${person.name} пользователя ${ancestor.name} добавлен в список `);
-                familySearch(person);
-            }
-        });
-        return ancestor;
-    };
 
     for (const member of family) {
         if (member.parentId === null) {
             console.log(`Проверяем ${member.name}`);
             familyTree.push(familySearch(member));
         }
-    }
+    }    
+
+    function familySearch(ancestor) {
+        family.map(person =>{
+            console.log(`Ищем потомков ${ancestor.name}`);
+            if (ancestor.id === person.parentId) {
+                console.log(`Потомок пользователя ${ancestor.name} найден. Это ${person.name}`);
+                if (!ancestor.childrens) {
+                    ancestor.childrens = [];
+                    ancestor.childrens.push(person);
+                    console.log(`Потомок ${person.name} пользователя ${ancestor.name} добавлен в список `);
+                    familySearch(person);
+                } else {
+                    ancestor.childrens.push(person);
+                    console.log(`Потомок ${person.name} пользователя ${ancestor.name} добавлен в список `);
+                    familySearch(person);
+                }
+            }
+        });
+        return ancestor;
+    };
+
     return console.log(familyTree);
-
 }
-
 
 findChildrens(people);
 
+// Family tree <<<<=========================
