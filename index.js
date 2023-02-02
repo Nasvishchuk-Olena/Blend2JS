@@ -258,6 +258,38 @@
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
 
 
+
+// class Storage {
+    
+//     constructor(arr) {
+//         this.items = arr;
+//     }
+    
+//     getItems() {
+//         console.log(this.items);
+//     }
+
+//     addItems(item) {
+//         this.items.push(item);
+//     }
+
+//     removeItem(item) {
+//         this.items.splice(this.items.indexOf(item), 1);
+//     }
+// }
+
+// // const arr = [1, 2, 3]
+// // arr.indexOf
+
+// const myStore = new Storage([1, 2, 3]);
+// myStore.addItems(4);
+// myStore.removeItem(3);
+
+// console.log(myStore.getItems());
+
+
+
+
 // Family tree =========================>>>>
 
 // const people = [
